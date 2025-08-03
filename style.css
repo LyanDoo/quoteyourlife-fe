@@ -1,0 +1,151 @@
+/* Ganti seluruh isi style.css dengan ini untuk tema Retro Pop */
+
+/* --- FONT --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fef3c7; /* Latar belakang kuning pucat */
+}
+
+/* --- HEADER --- */
+.hero.is-primary {
+    background-color: #8b5cf6; /* Ungu cerah */
+    background-image: none;
+    border-bottom: 4px solid #000;
+}
+
+.hero .title, .hero .subtitle {
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 3px 3px 0px #000;
+}
+
+/* --- TOMBOL --- */
+.button.is-link {
+    background-color: #fb7185; /* Pink-merah */
+    border: 3px solid #000;
+    color: #000;
+    font-weight: 700;
+    box-shadow: 4px 4px 0px #000;
+    transition: all 0.1s ease;
+}
+.button.is-link:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+/* --- STICKY NOTE --- */
+.sticky-note {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: 3px solid #111827; /* Border hitam tebal */
+    border-radius: 6px;
+    box-shadow: 8px 8px 0px #111827; /* Bayangan solid */
+    transition: all 0.2s ease-in-out;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.sticky-note:hover {
+    transform: scale(1.05) rotate(1deg) !important;
+    z-index: 10;
+}
+
+.sticky-note .content {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    color: #111827;
+}
+
+.sticky-note .author {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 1rem;
+    text-align: right;
+    align-self: flex-end;
+}
+
+/* --- VARIASI WARNA CERAH --- */
+.note-yellow { background-color: #fef08a; }
+.note-pink   { background-color: #f9a8d4; }
+.note-blue   { background-color: #93c5fd; }
+.note-green  { background-color: #a7f3d0; }
+
+
+/* --- MODAL RETRO POP --- */
+
+.modal-card {
+    border: 3px solid #111827;
+    box-shadow: 8px 8px 0px #111827;
+    border-radius: 6px;
+}
+
+.modal-card-head {
+    background-color: #8b5cf6; /* Warna ungu yang sama dengan header utama */
+    border-bottom: 3px solid #111827;
+    border-radius: 4px 4px 0 0;
+}
+
+.modal-card-title {
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 3px 3px 0px #000;
+}
+
+.modal-card-body {
+    background-color: #fef3c7; /* Warna latar belakang body */
+}
+
+.modal-card-foot {
+    background-color: #fef3c7;
+    border-top: 3px solid #111827;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Styling untuk form di dalam modal */
+.modal .label {
+    font-weight: 700;
+    color: #111827;
+}
+
+.modal .input,
+.modal .textarea {
+    border: 3px solid #111827;
+    box-shadow: 4px 4px 0px #d1d5db; /* Bayangan solid abu-abu */
+    font-weight: 600;
+    transition: all 0.1s ease;
+}
+
+.modal .input:focus,
+.modal .textarea:focus {
+    box-shadow: 2px 2px 0px #111827;
+}
+
+/* Styling untuk tombol di footer modal */
+.modal-card-foot .button {
+    border: 3px solid #111827;
+    font-weight: 700;
+    box-shadow: 4px 4px 0px #111827;
+}
+
+.modal-card-foot .button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #111827;
+}
+
+.modal-card-foot .button.is-success {
+    background-color: #a7f3d0; /* Warna hijau dari note */
+    color: #111827;
+}
+
+.modal-card-foot .button:not(.is-success) {
+    background-color: #e2e8f0; /* Warna abu-abu netral */
+    color: #111827;
+}

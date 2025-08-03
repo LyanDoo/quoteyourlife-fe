@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Your Life</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title is-1">
+                    Can I quote you on that?
+                </h1>
+                <!-- <h2 class="subtitle is-4">
+                    Bagikan kutipan singkatmu secara anonim dan inspirasi dunia.
+                </h2> -->
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container has-text-centered">
+            <button class="button is-large is-link is-rounded" id="add-quote-btn">
+                <strong>Add yours +</strong>
+            </button>
+        </div>
+    </section>
+
+    <main class="section">
+        <div class="container">
+            <div id="quotes-container" class="columns is-multiline is-centered">
+                </div>
+        </div>
+    </main>
+
+    <div class="modal" id="quote-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Add Yours</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="quote-form">
+                    <div class="field">
+                        <label class="label" for="quote-input">Quotin'</label>
+                        <div class="control">
+                            <textarea id="quote-input" class="textarea" placeholder="Hidup adalah jalan, ..." required></textarea>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label" for="author-input">Author</label>
+                        <div class="control">
+                            <input id="author-input" class="input" type="text" placeholder="Anonymous">
+                        </div>
+                    </div>
+                </form>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success" id="save-quote-btn">Simpan</button>
+                <button class="button" id="cancel-btn">Batal</button>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

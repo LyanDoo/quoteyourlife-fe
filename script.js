@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- KONFIGURASI & PEMILIHAN ELEMEN ---
-        const API_URL = 'http://20.167.50.7/api/quotes'; // ⚠️ GANTI DENGAN URL API ANDA
+        const API_URL = 'https://lyandoo.online/api/quotes'; // ⚠️ GANTI DENGAN URL API ANDA
 
     // Elemen Modal & Form
     const addQuoteBtn = document.getElementById('add-quote-btn');

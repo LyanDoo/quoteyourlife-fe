@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- KONFIGURASI & PEMILIHAN ELEMEN ---
-    const API_URL = 'http://localhost:3000/quotes'; // ⚠️ GANTI DENGAN URL API ANDA
+        const API_URL = 'http://20.167.50.7/api/quotes'; // ⚠️ GANTI DENGAN URL API ANDA
 
     // Elemen Modal & Form
     const addQuoteBtn = document.getElementById('add-quote-btn');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         column.dataset.id = id; // Simpan ID di elemen untuk referensi (misal: untuk hapus)
 
         // Variasi warna & rotasi acak
-        const colors = ['note-yellow', 'note-pink', 'note-blue', 'note-green'];
+        const colors = ['note-pink', 'note-blue', 'note-green'];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         const randomRotation = Math.random() * 6 - 3; // Rotasi dari -3 s/d +3 derajat
 
@@ -52,11 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
         quotesContainer.innerHTML = '<p class="has-text-centered">Memuat quotes...</p>';
         try {
             const response = await fetch(API_URL);
-            console.log(response)
             if (!response.ok) throw new Error(`Error: ${response.statusText}`);
             
             const quotes = await response.json();
-            console.log(quotes)
             quotesContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
             
             if (quotes.length === 0) {

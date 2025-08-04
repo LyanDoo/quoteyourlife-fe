@@ -5,7 +5,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fef3c7; /* Latar belakang kuning pucat */
+    
+    /* Pola Halftone Dots */
+    background-color: #fef3c7;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+    background-size: 10px 10px;
 }
 
 /* --- HEADER --- */
@@ -13,6 +17,10 @@ body {
     background-color: #8b5cf6; /* Ungu cerah */
     background-image: none;
     border-bottom: 4px solid #000;
+}
+
+.hero-body {
+    padding-bottom: 24px;
 }
 
 .hero .title, .hero .subtitle {
@@ -60,6 +68,23 @@ body {
     line-height: 1.5;
     word-wrap: break-word;
     color: #111827;
+
+    background-image: linear-gradient(to top, #fef08a 100%, transparent 0%);
+    background-size: 100% 80%; /* Atur tebal stabilo (misal: 60% dari tinggi baris) */
+    background-repeat: no-repeat;
+    background-position: 0 70%; /* Atur posisi vertikal stabilo */
+    
+    display: inline; /* Tetap dibutuhkan agar background 'memeluk' teks */
+    line-height: 1.7; /* Beri ruang agar stabilo tidak terlalu rapat */
+    
+    /* Properti Kunci untuk memperbaiki masalah multi-baris */
+    -webkit-box-decoration-break: clone; /* Untuk browser Safari/Chrome lama */
+    box-decoration-break: clone; /* Standar */
+
+    /* Opsional: beri sedikit padding agar lebih rapi */
+    padding: 0 4px;
+    margin: 0 -4px;
+
 }
 
 .sticky-note .author {
@@ -148,4 +173,184 @@ body {
 .modal-card-foot .button:not(.is-success) {
     background-color: #e2e8f0; /* Warna abu-abu netral */
     color: #111827;
+}
+
+/* animation */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes pop-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.note-pop-in {
+    animation: pop-in 0.4s ease-out forwards;
+}
+
+
+/* Styling ulang tombol hapus di sticky note */
+.sticky-note .delete.delete-quote-btn {
+    background-color: #fb7185; /* Warna pink-merah */
+    border: 3px solid #111827;
+    border-radius: 50%; /* Buat jadi lingkaran */
+    box-shadow: 3px 3px 0px #111827;
+    transition: all 0.1s ease;
+}
+
+.sticky-note .delete.delete-quote-btn:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 2px 2px 0px #111827;
+}
+
+/* Mengatur ulang pseudo-element ::before dan ::after untuk 'X' */
+.sticky-note .delete.delete-quote-btn::before,
+.sticky-note .delete.delete-quote-btn::after {
+    background-color: #111827; /* Warna X jadi hitam */
+    width: 60%;
+    height: 3px;
+}
+
+/* Elemen Coretan Dekoratif */
+.sticky-note {
+    /* ...properti yang sudah ada... */
+    position: relative; /* Penting agar ::before bisa diposisikan */
+}
+
+.sticky-note::before {
+    content: '〰〰'; /* Bisa juga pakai SVG atau karakter lain */
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    font-size: 24px;
+    font-weight: 900;
+    color: #8b5cf6; /* Warna ungu header */
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+
+/* Link 'About Me' di bawah Subtitle */
+.subtitle-link-container {
+    margin-top: 1.5rem; /* Beri jarak dari subtitle di atasnya */
+}
+
+.subtitle-link-container .button {
+    background-color: #fef3c7; /* Warna kuning pucat dari background body */
+    color: #111827; /* Warna teks hitam */
+    border: 3px solid #111827;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.75);
+    font-weight: 700;
+    transition: all 0.1s ease;
+}
+
+.subtitle-link-container .button:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.75);
+
+}
+
+
+/* =============================== */
+/* === STYLE HALAMAN LINKTREE ==== */
+/* =============================== */
+
+/* Atur body agar konten berada di tengah */
+body.links-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Kontainer utama untuk semua elemen */
+.link-container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Foto Profil */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #111827;
+    box-shadow: 8px 8px 0px #111827;
+    object-fit: cover; /* Agar gambar tidak gepeng */
+    margin-bottom: 1rem;
+}
+
+/* Nama / Handle */
+.profile-name {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #111827;
+    text-shadow: 3px 3px 0 #fff, 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Bio singkat */
+.profile-bio {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    color: #111827;
+}
+
+/* Tombol Link */
+.link-button {
+    display: block;
+    text-decoration: none;
+    color: #111827;
+    font-weight: 700;
+    padding: 1rem;
+    margin: 1rem auto;
+    border: 3px solid #111827;
+    border-radius: 6px;
+    box-shadow: 8px 8px 0px #111827;
+    transition: all 0.1s ease-in-out;
+}
+
+.link-button:hover {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0px #111827;
+}
+
+/* Efek warna selang-seling agar lebih menarik */
+.link-button:nth-child(odd) {
+    background-color: #f9a8d4; /* Pink */
+}
+
+.link-button:nth-child(even) {
+    background-color: #93c5fd; /* Biru */
+}
+
+/* Link untuk kembali ke halaman utama */
+.back-link {
+    margin-top: 2.5rem;
+}
+
+.back-link a {
+    font-weight: 700;
+    color: #8b5cf6;
+    text-decoration: underline;
+}
+
+.back-link a:hover {
+    color: #fb7185;
 }

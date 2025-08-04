@@ -354,3 +354,128 @@ body.links-page {
 .back-link a:hover {
     color: #fb7185;
 }
+
+
+/* =============================== */
+/* === STYLE HALAMAN ABOUT ME ==== */
+/* =============================== */
+
+/* Atur body agar konten memiliki padding */
+/* Atur body khusus untuk halaman about agar konten memiliki padding */
+body.about-page {
+    padding: 2rem 1.5rem;
+}
+
+/* Kontainer utama untuk semua konten 'About Me' */
+.about-container {
+    max-width: 800px;
+    margin: 2rem auto; /* Beri margin atas & bawah, dan tengah secara horizontal */
+    padding: 2rem 2.5rem;
+    background-color: #fdfcf9; /* Warna putih gading */
+    border: 4px solid #111827;
+    border-radius: 6px;
+    box-shadow: 10px 10px 0px #111827;
+}
+
+/* Kontainer untuk header (gambar + judul) */
+.about-header {
+    display: flex; /* Gunakan Flexbox */
+    flex-wrap: wrap; /* Izinkan wrap jika layar sempit */
+    justify-content: center; /* Posisikan di tengah */
+    align-items: center; /* Sejajarkan secara vertikal */
+    gap: 1.5rem; /* Jarak antara gambar dan judul */
+    margin-bottom: 2rem; /* Jarak ke paragraf di bawahnya */
+}
+
+/* Styling untuk gambar profil */
+.about-profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+    border: 3px solid #111827;
+    box-shadow: 6px 6px 0px #111827;
+    object-fit: cover; /* Memastikan gambar tidak gepeng */
+}
+
+/* Judul Utama Halaman "About Me" */
+.about-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: #111827;
+    text-align: center;
+    margin-bottom: 0; /* Hapus margin bawah karena sudah diatur oleh .about-header */
+    text-shadow: 3px 3px 0 #fff, 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Sub-judul untuk setiap seksi (Skills, Education, etc.) */
+.about-subtitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+    border-bottom: 3px solid #111827;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Styling umum untuk paragraf di dalam container */
+.about-container p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    color: #374151; /* Abu-abu gelap agar nyaman dibaca */
+}
+
+/* Styling spesifik untuk list skills */
+.skills-list p {
+    margin-bottom: 0.5rem;
+}
+
+/* Styling untuk list pengalaman kerja & pendidikan */
+.exp-list {
+    list-style: none; /* Hapus bullet point default */
+    padding-left: 0;
+}
+
+.exp-list li {
+    font-size: 1.1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    color: #374151;
+}
+
+/* Membuat bullet point kustom yang retro */
+.exp-list li::before {
+    content: '»'; /* Karakter panah atau bisa ganti dengan '■' */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #8b5cf6; /* Warna ungu dari header utama */
+    font-weight: 900;
+}
+
+/* Link untuk kembali (diambil dari style halaman links) */
+.back-link {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.back-link a {
+    display: inline-block; /* Agar bisa diberi padding dan style seperti tombol */
+    padding: 0.75rem 1.5rem;
+    background-color: #fb7185; /* Warna pink-merah yang cerah */
+    color: #111827;
+    font-weight: 700;
+    text-decoration: none; /* Hapus underline */
+    border: 3px solid #111827;
+    border-radius: 6px;
+    box-shadow: 4px 4px 0px #111827;
+    transition: all 0.1s ease;
+}
+
+.back-link a:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #111827;
+    color: #111827; /* Pastikan warna teks tidak berubah saat hover */
+}
